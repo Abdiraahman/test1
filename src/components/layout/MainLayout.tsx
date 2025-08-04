@@ -9,7 +9,7 @@ interface LayoutProps {
   setActiveTab: (tab: TabType) => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) => {
+const MainLayout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) => {
   return (
     <div className="flex h-screen dashboard-bg">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -39,5 +39,5 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
   );
 };
 
-export default Layout;
+export default MainLayout;
 

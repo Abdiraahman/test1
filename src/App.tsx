@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Layout from './components/Layout';
-import Dashboard from './components/Dashboard';
-import Reports from './components/Reports';
-import Feedback from './components/Feedback';
-import Settings from './components/Settings';
+import MainLayout from './components/layout/MainLayout';
+import StudentDashboard from './pages/dashboard/StudentDashboard';
+import TaskList from './pages/tasks/TaskList';
+import WeeklyReview from './pages/feedback/WeeklyReview';
+import ProfileEdit from './pages/profile/ProfileEdit';
 import './App.css';
 
 type TabType = 'dashboard' | 'reports' | 'feedback' | 'settings';
@@ -14,22 +14,22 @@ function App(): JSX.Element {
   const renderContent = (): JSX.Element => {
     switch (activeTab) {
       case 'dashboard':
-        return <Dashboard />;
+        return <StudentDashboard />;
       case 'reports':
-        return <Reports />;
+        return <TaskList />;
       case 'feedback':
-        return <Feedback />;
+        return <WeeklyReview />;
       case 'settings':
-        return <Settings />;
+        return <ProfileEdit />;
       default:
-        return <Dashboard />;
+        return <StudentDashboard />;
     }
   };
 
   return (
-    <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
+    <MainLayout activeTab={activeTab} setActiveTab={setActiveTab}>
       {renderContent()}
-    </Layout>
+    </MainLayout>
   );
 }
 
