@@ -1,7 +1,15 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 
-const Layout = ({ children, activeTab, setActiveTab }) => {
+type TabType = 'dashboard' | 'reports' | 'feedback' | 'settings';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  activeTab: TabType;
+  setActiveTab: (tab: TabType) => void;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) => {
   return (
     <div className="flex h-screen dashboard-bg">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />

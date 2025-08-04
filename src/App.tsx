@@ -6,10 +6,12 @@ import Feedback from './components/Feedback';
 import Settings from './components/Settings';
 import './App.css';
 
-function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+type TabType = 'dashboard' | 'reports' | 'feedback' | 'settings';
 
-  const renderContent = () => {
+function App(): JSX.Element {
+  const [activeTab, setActiveTab] = useState<TabType>('dashboard');
+
+  const renderContent = (): JSX.Element => {
     switch (activeTab) {
       case 'dashboard':
         return <Dashboard />;

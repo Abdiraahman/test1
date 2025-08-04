@@ -1,7 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-const Dashboard = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  institution: string;
+  duration: string;
+  period: string;
+  supervisor: string;
+  course: string;
+  university: string;
+}
+
+const Dashboard: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     institution: '',
     duration: '',
     period: '',

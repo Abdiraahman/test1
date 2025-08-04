@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import { Home, FileText, MessageSquare, Settings, LogOut, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const Sidebar = ({ activeTab, setActiveTab }) => {
+type TabType = 'dashboard' | 'reports' | 'feedback' | 'settings';
+
+interface SidebarProps {
+  activeTab: TabType;
+  setActiveTab: (tab: TabType) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [

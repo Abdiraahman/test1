@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
-const Settings = () => {
-  const [profile, setProfile] = useState({
+interface Profile {
+  name: string;
+  registration: string;
+  email: string;
+  year: string;
+  yearofstudy: string;
+  course: string;
+  university: string;
+  phonenumber: string;
+}
+
+const Settings: React.FC = () => {
+  const [profile, setProfile] = useState<Profile>({
     name: '',
     registration:'',
     email: '',

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { FileText } from 'lucide-react';
 
-const Reports = () => {
-  const [dailyReport, setDailyReport] = useState({
+interface DailyReport {
+  workDone: string;
+  newSkills: string;
+  challenges: string;
+}
+
+const Reports: React.FC = () => {
+  const [dailyReport, setDailyReport] = useState<DailyReport>({
     workDone: '',
     newSkills: '',
     challenges: ''

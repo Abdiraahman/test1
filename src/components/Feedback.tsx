@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, Star, Send, User, FileText } from 'lucide-react';
 
-const Feedback = () => {
-  const [feedback, setFeedback] = useState('');
-  const [rating, setRating] = useState(0);
-  const [supervisorFeedback, setSupervisorFeedback] = useState([]);
+interface SupervisorFeedbackItem {
+  id: number;
+  supervisor: string;
+  date: string;
+  feedback: string;
+  rating: number;
+}
+
+const Feedback: React.FC = () => {
+  const [feedback, setFeedback] = useState<string>('');
+  const [rating, setRating] = useState<number>(0);
+  const [supervisorFeedback, setSupervisorFeedback] = useState<SupervisorFeedbackItem[]>([]);
   
   // State for dynamic summary statistics
   const [stats, setStats] = useState({
