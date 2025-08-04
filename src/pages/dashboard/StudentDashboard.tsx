@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import DailyTaskHistory from '@/components/features/students/DailyTaskHistory';
 
 interface FormData {
   institution: string;
@@ -197,6 +198,11 @@ const Dashboard: React.FC = () => {
             Progress updates automatically based on time elapsed
           </div>
         </div>
+      </div>
+
+      {/* Daily Task History Section */}
+      <div className="mt-8">
+        <DailyTaskHistory limit={3} />
       </div>
     </div>
   );

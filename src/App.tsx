@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MainLayout from './components/layout/MainLayout';
 import StudentDashboard from './pages/dashboard/StudentDashboard';
-import TaskList from './pages/tasks/TaskList';
+import DailyReport from './pages/tasks/DailyReport';
 import WeeklyReview from './pages/feedback/WeeklyReview';
 import ProfileEdit from './pages/profile/ProfileEdit';
 import './App.css';
@@ -16,7 +16,7 @@ function App(): JSX.Element {
       case 'dashboard':
         return <StudentDashboard />;
       case 'reports':
-        return <TaskList />;
+        return <DailyReport />;
       case 'feedback':
         return <WeeklyReview />;
       case 'settings':
